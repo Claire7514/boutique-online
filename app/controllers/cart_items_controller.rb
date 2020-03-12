@@ -25,5 +25,15 @@ before_action :authenticate_user!
       end
   end
 
+  def destroy
+    @cart = Cart.where(user_id: current_user.id).first
+    @cart_item_id = @cart_item.id
+    @cart_item.destroy
+    respond_to do |format|
+      format.html { }
+      format.js { }
+    end
+  end
+
 
 end

@@ -9,15 +9,6 @@ class CartController < ApplicationController
         redirect_to root_path
         flash[:alert] = "Votre panier est tellement vide.. vous devriez le remplir, entre vous et moi"
     end
-  end
-
-  def destroy
-    @cart = Cart.find_by(user: current_user)
-    @cart.destroy
-    flash[:notice] = "Commande supprimée"
-    redirect_to root_path
-  end
-
-
+  en
 
 end

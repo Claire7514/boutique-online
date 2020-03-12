@@ -69,8 +69,6 @@
 								<tr>
 									<th scope="col">Product</th>
 									<th scope="col">Price</th>
-									<th scope="col">Quantity</th>
-									<th scope="col">Total</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -100,7 +98,9 @@
 										<h5>$<%= cart_item.item.price %></h5>
 									</td>
 									<td>
-										<button class="main_btn" <%= link_to "Supprimer" , cart_item_path(cart_item.item.id) %></button>
+										<button class="main_btn" <%= link_to @cartitems, method: :delete, data: { confirm: 'Are you sure?' } do %>Delete
+										<% end %>
+
 									</td>
 								</tr>
 								<tr class="bottom_button">
